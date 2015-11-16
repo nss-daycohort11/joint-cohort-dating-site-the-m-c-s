@@ -26,6 +26,26 @@ require(
           console.log("tried to create user");
       });
 
+    $("#logInButton").on("click", function(){
+
+        var signInEmail = $('#signInEmail').val();
+        var signInPassword = $('#signInPassword').val();
+        console.log(signInPassword, signInEmail);
+
+            function authHandler(error, authData) {
+            if (error) {
+              console.log("Login Failed!", error);
+            } else {
+              console.log("Authenticated successfully with payload:", authData);
+            }
+      }
+
+      ref.authWithPassword({
+        email    : signInEmail,
+        password : signInPassword
+      }, authHandler);
+    })  
+
 
     /*
       You can choose to use the REST methods to interact with
