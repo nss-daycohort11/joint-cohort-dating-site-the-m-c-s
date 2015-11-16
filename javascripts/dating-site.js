@@ -17,7 +17,7 @@ require(
   ["dependencies", "authentication"], 
   function(_$_, auth) {
 
-
+    var ref = new Firebase("https://steamy-meets.firebaseio.com/");
 
     $("#signUpButton").on("click", function() {
         var newEmail = $('#signUpEmail').val();

@@ -19,6 +19,25 @@ define(function(require) {
       });
     }
 
+    loginUser : function() {
+
+      function authHandler(error, authData) {
+        if (error) {
+          console.log("Login Failed!", error);
+        } else {
+          console.log("Authenticated successfully with payload:", authData);
+        }
+      }
+
+      // Or with an email/password combination
+      ref.authWithPassword({
+        email    : 'bobtony@firebase.com',
+        password : 'correcthorsebatterystaple'
+      }, authHandler);
+
+
+    }
+
    }
 
 }); 
