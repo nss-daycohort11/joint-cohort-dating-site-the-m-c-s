@@ -20,6 +20,6 @@ define(function(require) {
     }
 
 
-  }
+  };
 
 }); 

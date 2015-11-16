@@ -39,7 +39,7 @@ require(
       function getName(authData) {
              return authData.password.email.replace(/@.*/, '');
         }
-}
+
       });
 
     $("#logInButton").on("click", function(){
@@ -59,12 +59,12 @@ require(
         email    : signInEmail,
         password : signInPassword
       }, authHandler);
-    })  
+    });  
 
     $("#logOutButton").on("click", function() {
       console.log("logged out");
       ref.unauth();
-    })
+    });
 
 
     /*
