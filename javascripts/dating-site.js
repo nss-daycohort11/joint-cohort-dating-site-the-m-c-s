@@ -17,8 +17,38 @@ require(
   ["dependencies", "authentication"], 
   function(_$_, auth) {
 
+    var ref = new Firebase("https://steamy-meets.firebaseio.com/");
 
-    var uid = auth.createUser()
+    $("#signUpButton").on("click", function() {
+        var newEmail = $('#signUpEmail').val();
+        var newPassword = $('#signUpPassword').val();
+        auth.createNewUser(newEmail, newPassword);
+          console.log("tried to create user");
+      });
+
+    $("#loginButton").on("click", function(){
+
+        var signInEmail = $('#signInEmail').val();
+        var signInPassword = $('#signInPassword').val();
+            function authHandler(error, authData) {
+            if (error) {
+              console.log("Login Failed!", error);
+            } else {
+              console.log("Authenticated successfully with payload:", authData);
+            }
+      }
+
+      ref.authWithPassword({
+        email    : 'bobtony@firebase.com',
+        password : 'correcthorsebatterystaple'
+      }, authHandler);
+    })  
+
+
+
+
+
+
 
 
     /*
