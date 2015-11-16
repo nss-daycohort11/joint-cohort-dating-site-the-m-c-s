@@ -24,13 +24,14 @@ require(
         var newPassword = $('#signUpPassword').val();
         auth.createNewUser(newEmail, newPassword);
           console.log("tried to create user");
-      });
+          console.log(authdata);
+    });
 
     $("#logInButton").on("click", function(){
 
         var signInEmail = $('#signInEmail').val();
         var signInPassword = $('#signInPassword').val();
-        console.log(signInPassword, signInEmail);
+        console.log(signInEmail, signInPassword);
 
             function authHandler(error, authData) {
             if (error) {
@@ -44,7 +45,26 @@ require(
         email    : signInEmail,
         password : signInPassword
       }, authHandler);
-    })  
+
+            ref.onAuth(function(authData) {
+        if (authData) {
+          console.log("authdata exists");
+          ref.child("users").child(authData.uid).set({
+            provider: authData.provider,
+            name: getName(authData)
+          });
+        }
+      });
+
+      function getName(authData) {
+             return authData.password.email.replace(/@.*/, '');
+        }
+    });  
+
+    $("#logOutButton").on("click", function() {
+      console.log("logged out");
+      ref.unauth();
+    });
 
 
     /*
