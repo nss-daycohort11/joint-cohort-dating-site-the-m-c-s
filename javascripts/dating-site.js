@@ -18,7 +18,13 @@ require(
   function(_$_, auth) {
 
 
-    var uid = auth.createUser()
+
+    $("#signUpButton").on("click", function() {
+        var newEmail = $('#signUpEmail').val();
+        var newPassword = $('#signUpPassword').val();
+        auth.createNewUser(newEmail, newPassword);
+          console.log("tried to create user");
+      });
 
 
     /*
