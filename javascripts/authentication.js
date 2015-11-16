@@ -1,9 +1,12 @@
-define(["firebase"],function(_firebase) {
+define(function(require) {
+
+  var firebase = require('firebase');
+
 
  return {
 
-    var ref = new Firebase("https://steamy-meets.firebaseio.com/");
-    function : CreateUser() {
+    createUser : function() {
+      var ref = new Firebase("https://steamy-meets.firebaseio.com/");
       ref.createUser({
         email    : "bobtony@firebase.com",
         password : "correcthorsebatterystaple"
@@ -14,7 +17,7 @@ define(["firebase"],function(_firebase) {
         console.log("Successfully created user account with uid:", userData.uid);
       }
       });
-    };
+    }
 
    }
 

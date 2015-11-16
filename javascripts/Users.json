@@ -1,0 +1,18 @@
+{
+    "users": [
+        {
+            "uid": "github:sample",
+            "displayName": "ZZPop",
+            "ethnicity": "Equidorian",
+            "ageInYears":"5",
+            "type":"soda",
+            "food":"false",
+            "spicy":"true",
+            "gluten-free":"true",
+            "vegan":"true",
+            "vegitarian":"false",
+            "alcoholic":"false",
+            "dairy":"false"
+        }
+    ]
+}
