@@ -26,10 +26,11 @@ require(
           console.log("tried to create user");
       });
 
-    $("#loginButton").on("click", function(){
+    $("#logInButton").on("click", function(){
 
         var signInEmail = $('#signInEmail').val();
         var signInPassword = $('#signInPassword').val();
+      console.log(signInEmail, signInPassword);
             function authHandler(error, authData) {
             if (error) {
               console.log("Login Failed!", error);
@@ -39,10 +40,15 @@ require(
       }
 
       ref.authWithPassword({
-        email    : 'bobtony@firebase.com',
-        password : 'correcthorsebatterystaple'
+        email    : signInEmail,
+        password : signInPassword
       }, authHandler);
     })  
+
+    $("#logOutButton").on("click", function() {
+      console.log("logged out");
+      ref.unauth();
+    })
 
 
     /*
