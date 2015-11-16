@@ -24,23 +24,8 @@ require(
         var newPassword = $('#signUpPassword').val();
         auth.createNewUser(newEmail, newPassword);
           console.log("tried to create user");
-
-      ref.onAuth(function(authData) {
-        if (authData) {
-        // save the user's profile into the database so we can list users,
-        // use them in Security and Firebase Rules, and show profiles
-          ref.child("users").child(authData.uid).set({
-            provider: authData.provider,
-            name: getName(authData)
-          });
-        }
-      });
-// find a suitable name based on the meta info given by each provider
-      function getName(authData) {
-             return authData.password.email.replace(/@.*/, '');
-        }
-
-      });
+          console.log(authdata);
+    });
 
     $("#logInButton").on("click", function(){
 
@@ -59,6 +44,20 @@ require(
         email    : signInEmail,
         password : signInPassword
       }, authHandler);
+
+            ref.onAuth(function(authData) {
+        if (authData) {
+          console.log("authdata exists");
+          ref.child("users").child(authData.uid).set({
+            provider: authData.provider,
+            name: getName(authData)
+          });
+        }
+      });
+
+      function getName(authData) {
+             return authData.password.email.replace(/@.*/, '');
+        }
     });  
 
     $("#logOutButton").on("click", function() {
