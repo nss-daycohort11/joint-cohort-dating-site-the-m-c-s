@@ -5,11 +5,11 @@ define(function(require) {
 
  return {
 
-    createUser : function() {
+    createNewUser : function(newEmail, newPassword) {
       var ref = new Firebase("https://steamy-meets.firebaseio.com/");
       ref.createUser({
-        email    : "bobtony@firebase.com",
-        password : "correcthorsebatterystaple"
+        email    : newEmail,
+        password : newPassword
       }, function(error, userData) {
       if (error) {
         console.log("Error creating user:", error);
