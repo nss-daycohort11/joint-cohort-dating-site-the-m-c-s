@@ -20,6 +20,28 @@ require(
 
     var ref = new Firebase("https://steamy-meets.firebaseio.com/");
 
+    $("#facebook").on("click",function(){
+    ref.authWithOAuthPopup("facebook", function(error, authData) {
+      if (error) {
+        console.log("Login Failed!", error);
+      } else {
+        console.log("Authenticated successfully with payload:", authData);
+        $("#login-container").hide();
+        $("#home-view").show();
+      }
+    })});
+
+     $("#google").on("click",function(){
+    ref.authWithOAuthPopup("google", function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+      $("#login-container").hide();
+      $("#home-view").show();
+    }
+    })});
+
     $("#signUpButton").on("click", function() {
         var newEmail = $('#signUpEmail').val();
         var newPassword = $('#signUpPassword').val();
