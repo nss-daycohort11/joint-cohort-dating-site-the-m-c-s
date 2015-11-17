@@ -26,15 +26,17 @@ require(
         $(".login-box").hide();
         $(".home-view").show();
           console.log("tried to create user");
-      });
+          console.log(authdata);
+    });
 
     $("#logInButton").on("click", function(){
 
         var signInEmail = $('#signInEmail').val();
         var signInPassword = $('#signInPassword').val();
-        console.log(signInPassword, signInEmail);
         $(".login-box").hide();
         $(".home-view").show();
+        console.log(signInEmail, signInPassword);
+
           function authHandler(error, authData) {
             if (error) {
               console.log("Login Failed!", error);
@@ -47,7 +49,26 @@ require(
         email    : signInEmail,
         password : signInPassword
       }, authHandler);
-    });  
+
+        ref.onAuth(function(authData) {
+          if (authData) {
+          console.log("authdata exists");
+          ref.child("users").child(authData.uid).set({
+            provider: authData.provider,
+            name: getName(authData)
+          });
+        }
+      });
+
+      function getName(authData) {
+             return authData.password.email.replace(/@.*/, '');
+        }
+    }); //--end logInButton 
+
+  $("#logOutButton").on("click", function() {
+      console.log("logged out");
+      ref.unauth();
+  });
 
 
     /*
@@ -59,4 +80,4 @@ require(
       named `potential-mates.js`, and `add-favorite.js`.
      */
     
-  });
+});
