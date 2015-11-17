@@ -29,7 +29,8 @@ require(
         $("#login-container").hide();
         $("#home-view").show();
       }
-    })});
+    });
+  });
 
      $("#google").on("click",function(){
     ref.authWithOAuthPopup("google", function(error, authData) {
@@ -40,7 +41,8 @@ require(
       $("#login-container").hide();
       $("#home-view").show();
     }
-    })});
+    });
+  });
 
     $("#signUpButton").on("click", function() {
         var newEmail = $('#signUpEmail').val();
