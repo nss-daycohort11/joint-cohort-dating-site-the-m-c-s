@@ -1,17 +1,53 @@
-{{#each profile}}
-	  <h4>{{ displayName }}</h4>
-  		<ul>
-	  		<li>{{ ageInYears }}</li>
-	  		<li>{{ ethnicity }}</li>
-	  		<li>{{ food }}</li>
-	  		<li>{{ alcolholic }}</li>
-	  		<li>{{ dairy }}</li>
-	  		<li>{{ gluten-free }}</li>
-	  		<li>{{ spicy }}</li>
-	  		<li>{{ vegan }}</li>
-	  		<li>{{ vegetarian }}</li>
-	  		<li>{{ personalStatement }}</li>
-	  		<li>{{ profileURL }}</li>
-	  		<li>{{ uid }}</li>
-	  	</ul>
-{{/each}}
+
+<div class="col-sm-1"></div>
+<div class="col-sm-10">
+	<div class="profile-image">
+		<img src="{{profileURL}}">
+	</div>
+	<div class="profile-list">
+		<ul>
+			<li><h3>{{displayName}}</h3></li>
+			<li>{{type}}</li>
+			<li>{{ ageInYears }}</li>
+		</ul>
+	</div>
+	<div>
+		<p>{{personalStatement}}</p>	
+	</div>
+	<table class="table table-bordered">
+  	<tr>
+  		<td>Ethnicity</td>
+  		<td>{{ethnicity}}</td>
+  	</tr>
+  	<tr>
+  		<td>Food</td>
+  		<td>{{ food }}</td>
+  	</tr>
+  	<tr>
+  		<td>Alcoholic</td>
+  		<td>{{ alcoholic }}</td>
+  	</tr>
+  	<tr>
+  		<td>Dairy</td>
+  		<td>{{ dairy }}</td>
+  	</tr>
+  	<tr>
+  		<td>Gluten Free</td>
+  		<td>{{ gluten-free }}</td>
+  	</tr>
+  	<tr>
+  		<td>Spicy</td>
+  		<td>{{ spicy }}</td>
+  	</tr>
+  	<tr>
+  		<td>Vegan</td>
+  		<td>{{ vegan }}</td>
+  	</tr>
+  	<tr>
+  		<td>Vegetarian</td>
+  		<td>{{ vegetarian }}</td>
+  	</tr>
+	</table>
+</div>  {{!-- end of div --}}
+<div class="col-sm-1"></div>
+
