@@ -1,4 +1,17 @@
-{{#each matches}}
-  <h3>{{ name }}</h3>
-  <section>{{ bio }}</section>
+<div class="col-sm-1"></div>
+{{#each users}}
+<div class="candidate col-sm-3">
+	<div class="mini-profile-image">
+		<img src="{{profileURL}}" class="img-circle" height="85" width="85">
+	</div>
+	<div class="mini-profile-list">
+		<ul>
+			<li><h4 class="display-name">{{displayName}}</h4></li>
+			<li>Type: {{type}}</li>
+			<li>Age: {{ageInYears}}</li>
+		</ul>
+	</div>
+		<p>{{personalStatement}}</p>
+	<button id="{{@key}}" class="view-profile btn btn-xs">View Profile</button>
+</div>
 {{/each}}
