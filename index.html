@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<!-- ***************** NAV BAR ********************** -->
+	<!-- ************************* NAV BAR ******************************* -->
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
@@ -44,7 +44,7 @@
 	            <li><a href="#">Settings</a></li>
 	            <li><a href="#">Messages</a></li>
 	            <li role="separator" class="divider"></li>
-	            <li><a href="#">Log Out</a></li>
+	            <li><a href="#" id="logOutButton">Log Out</a></li>
 	          </ul>
 	        </li>
 	      </ul>
@@ -53,7 +53,7 @@
 	</nav> <!-- -END NAV BAR -->
  <!-- ************************login form********************** -->
 
-  <div class="login-box">
+  <div id="login-container" class="login-box">
     <div class="lb-header">
       <a href="#" class="active" id="login-box-link">Login</a>
       <a href="#" id="signup-box-link">Sign Up</a>
@@ -97,6 +97,19 @@
       </div>
     </form>
   </div> <!-- end LOGIN FORM -->
+ <!-- ******************************* HOME PAGE ************************************** -->
+ 	<div id="home-view" class="container">
+ 		<div class="row welcome-banner">
+ 			<h1>Welcome to Steamy Meets</h1>
+ 		</div>
+ 		<div id="mini-profile-view-row1" class="row">
+ 			<!-- insert candidate handlebars templates three across -->
+ 		</div>
+ 		<div id="mini-profile-view-row2" class="row">
+ 			<!-- insert candidate handlebars templates three across -->
+ 		</div>
+ 	</div> <!-- end of home-view -->
+
   
   <script data-main="javascripts/dating-site" src="lib/bower_components/requirejs/require.js"></script>
 

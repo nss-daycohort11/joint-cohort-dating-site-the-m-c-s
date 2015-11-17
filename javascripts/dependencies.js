@@ -4,4 +4,6 @@ define(function(require) {
   var h = require("hbs");
   var firebase = require("firebase");
   var login = require("login");
+  var homeView = require("home_view");
+  var _ = require("lodash");
 });

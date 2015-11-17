@@ -16,6 +16,7 @@ require.config({
 require(
   ["dependencies", "authentication"], 
   function(_$_, auth) {
+    $("#home-view").hide();
 
     var ref = new Firebase("https://steamy-meets.firebaseio.com/");
 
@@ -23,28 +24,52 @@ require(
         var newEmail = $('#signUpEmail').val();
         var newPassword = $('#signUpPassword').val();
         auth.createNewUser(newEmail, newPassword);
+        $("#login-container").hide();
+        $("#home-view").show();
           console.log("tried to create user");
-      });
+          console.log(authdata);
+    });
 
     $("#logInButton").on("click", function(){
 
         var signInEmail = $('#signInEmail').val();
         var signInPassword = $('#signInPassword').val();
-        console.log(signInPassword, signInEmail);
+        $("#login-container").hide();
+        $("#home-view").show();
+        console.log(signInEmail, signInPassword);
 
-            function authHandler(error, authData) {
+          function authHandler(error, authData) {
             if (error) {
               console.log("Login Failed!", error);
             } else {
               console.log("Authenticated successfully with payload:", authData);
             }
-      }
+          }
 
       ref.authWithPassword({
         email    : signInEmail,
         password : signInPassword
       }, authHandler);
-    })  
+
+        ref.onAuth(function(authData) {
+          if (authData) {
+          console.log("authdata exists");
+          ref.child("users").child(authData.uid).set({
+            provider: authData.provider,
+            name: getName(authData)
+          });
+        }
+      });
+
+      function getName(authData) {
+             return authData.password.email.replace(/@.*/, '');
+        }
+    }); //--end logInButton 
+
+  $("#logOutButton").on("click", function() {
+      console.log("logged out");
+      ref.unauth();
+  });
 
 
     /*
@@ -56,5 +81,4 @@ require(
       named `potential-mates.js`, and `add-favorite.js`.
      */
     
-  }
-);
+});

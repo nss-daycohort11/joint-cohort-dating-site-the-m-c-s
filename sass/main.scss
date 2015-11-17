@@ -119,3 +119,24 @@ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
   color: #888;
   font-size: 0.75rem;
 }
+
+// ****************** HOME PAGE VIEW ************************
+.welcome-banner {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.mini-profile-list ul {
+  list-style-type: none;
+}
+
+.candidate {
+  border: 2px solid black;
+  margin: 15px;
+  padding: 0;
+}
+
+.mini-profile-image {
+  float: left;
+  margin-right: 10px;
+}
