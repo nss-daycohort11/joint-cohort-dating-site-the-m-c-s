@@ -1,18 +1,17 @@
+<div class="col-sm-1"></div>
 {{#each users}}
 <div class="candidate col-sm-3">
-	<div class="col-sm-4">
-		<img src="{{profileURL}}">
+	<div class="mini-profile-image">
+		<img src="{{profileURL}}" class="img-circle" height="85" width="85">
 	</div>
-	<div class="col-sm-8">
+	<div class="mini-profile-list">
 		<ul>
-			<li><h2 class="display-name">{{displayName}}</h2></li>
-			<li>{{type}}</li>
-			<li>{{ageInYears}}</li>
+			<li><h4 class="display-name">{{displayName}}</h4></li>
+			<li>Type: {{type}}</li>
+			<li>Age: {{ageInYears}}</li>
 		</ul>
 	</div>
-	<div class="col-sm-12">
 		<p>{{personalStatement}}</p>
-	</div>
-	<button id="{{@key}}" class="view-profile">View Profile</button>
+	<button id="{{@key}}" class="view-profile btn btn-xs">View Profile</button>
 </div>
 {{/each}}

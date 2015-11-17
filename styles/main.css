@@ -119,4 +119,20 @@ body {
   color: #888;
   font-size: 0.75rem; }
 
+.welcome-banner {
+  text-align: center;
+  margin: 25px 0; }
+
+.mini-profile-list ul {
+  list-style-type: none; }
+
+.candidate {
+  border: 2px solid black;
+  margin: 15px;
+  padding: 0; }
+
+.mini-profile-image {
+  float: left;
+  margin-right: 10px; }
+
 /*# sourceMappingURL=main.css.map */

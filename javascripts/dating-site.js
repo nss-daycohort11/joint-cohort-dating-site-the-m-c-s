@@ -16,6 +16,7 @@ require.config({
 require(
   ["dependencies", "authentication"], 
   function(_$_, auth) {
+    $("#home-view").hide();
 
     var ref = new Firebase("https://steamy-meets.firebaseio.com/");
 
@@ -23,8 +24,8 @@ require(
         var newEmail = $('#signUpEmail').val();
         var newPassword = $('#signUpPassword').val();
         auth.createNewUser(newEmail, newPassword);
-        $(".login-box").hide();
-        $(".home-view").show();
+        $("#login-container").hide();
+        $("#home-view").show();
           console.log("tried to create user");
           console.log(authdata);
     });
@@ -33,8 +34,8 @@ require(
 
         var signInEmail = $('#signInEmail').val();
         var signInPassword = $('#signInPassword').val();
-        $(".login-box").hide();
-        $(".home-view").show();
+        $("#login-container").hide();
+        $("#home-view").show();
         console.log(signInEmail, signInPassword);
 
           function authHandler(error, authData) {

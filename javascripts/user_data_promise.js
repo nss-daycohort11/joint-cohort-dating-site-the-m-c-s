@@ -2,7 +2,7 @@ define(["q", "jquery"], function(Q, $) {
   return function() {
     var deferred = Q.defer();
 
-    $.ajax({ url: "https://steamy-meets.firebaseio.com/" })
+    $.ajax({ url: "https://steamy-meets.firebaseio.com/.json" })
       // XHR was successful
       .done(function(json_data) {
         // Now we can resolve the promise and send the data
