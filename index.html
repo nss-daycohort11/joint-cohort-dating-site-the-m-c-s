@@ -109,6 +109,39 @@
  			<!-- insert candidate handlebars templates three across -->
  		</div>
  	</div> <!-- end of home-view -->
+  <!-- *** end HOme Page *** -->
+  <!-- ***** Profile  update view *****-->
+    <form>
+      <input type="radio" name="food" value="true"> I am a food seeking a beverage
+      <input type="radio" name="food" value="false"> I am a beverage seeking a food
+      <input type="radio" name="food" value="milkshake"> I am confused little milkshake<br>
+      <label for="displayName">Display Name:
+      <input type="text" name='displayName' id="displayName"><br>
+      <label for="age">Age:
+      <input type="number" name='age' id="age"><br>
+      <label for="ethnicity">Ethnicity:
+      <input type="text" name='ethnicity' id="ethnicity"><br>
+      <label for="profileURL">URL for profile picture:
+      <input type="text" name='profileURL' id="profileURL"><br>
+      <label for="personalStatement">Personal Statement:
+      <textarea name='personalStatement' id="personalStatment"></textarea><br>
+      <input type="radio" name="alcoholic" value="true"> Alcoholic
+      <input type="radio" name="alcoholic" value="false">Non-Alcoholic<br>
+      <input type="radio" name="dairy" value="true"> Contains Dairy
+      <input type="radio" name="dairy" value="false"> No Dairy<br>
+      <input type="radio" name="gluten" value="true"> Contains Gluten
+      <input type="radio" name="gluten" value="false"> Gluten Free<br>
+      <input type="radio" name="spicy" value="true"> Spicy
+      <input type="radio" name="spicy" value="false"> Mild<br>
+      <input type="radio" name="vegetarian" value="true"> Vegetarian
+      <input type="radio" name="vegetarian" value="false"> Not Vegetarian<br>
+      <input type="radio" name="vegan" value="true"> Vegan
+      <input type="radio" name="vegan" value="false"> Not Vegan<br>
+      <button id="updateBtn">Update Profile</button>
+    </form>
+
+
+  <!-- ***** End Profile UPdate View **** -->
 
   
   <script data-main="javascripts/dating-site" src="lib/bower_components/requirejs/require.js"></script>

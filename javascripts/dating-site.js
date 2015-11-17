@@ -14,11 +14,12 @@ require.config({
 });
 
 require(
-  ["dependencies", "authentication"], 
-  function(_$_, auth) {
+  ["dependencies", "authentication", "updateProfile"], 
+  function(_$_, auth, updateProfile) {
     $("#home-view").hide();
 
     var ref = new Firebase("https://steamy-meets.firebaseio.com/");
+
 
     $("#signUpButton").on("click", function() {
         var newEmail = $('#signUpEmail').val();
@@ -51,12 +52,22 @@ require(
         password : signInPassword
       }, authHandler);
 
+      var newUser;
+
+      var authData = ref.getAuth();
+
+      ref.child("users").child(authData.uid).once("value", function(snapshot) {
+        newUser = snapshot.exists();
+        console.log("newUser", newUser);
+      });
+
         ref.onAuth(function(authData) {
-          if (authData) {
+          if (authData && newUser) {
           console.log("authdata exists");
           ref.child("users").child(authData.uid).set({
             provider: authData.provider,
-            name: getName(authData)
+            name: getName(authData),
+            uid: authData.uid
           });
         }
       });
@@ -70,6 +81,10 @@ require(
       console.log("logged out");
       ref.unauth();
   });
+
+    $("#updateBtn").on("click", function() {
+      updateProfile.update();
+    });
 
 
     /*
