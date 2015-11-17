@@ -21,13 +21,13 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">Home</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Find Matches <span class="sr-only">(current)</span></a></li>
+	        <li><a class="navbar-brand" href="#">Home</a></li>
+          <li><a class="navbar-brand" href="#">Find Matches</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	      <form class="navbar-form navbar-left" role="search">
@@ -40,7 +40,7 @@
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
-	            <li><a href="#">My Profile</a></li>
+	            <li><a href="#/user-profile">My Profile</a></li>
 	            <li><a href="#">Settings</a></li>
 	            <li><a href="#">Messages</a></li>
 	            <li role="separator" class="divider"></li>
@@ -52,40 +52,23 @@
 	  </div><!-- /.container-fluid -->
 	</nav> <!-- -END NAV BAR -->
  <!-- ************************login form********************** -->
+  <div class= "pageWrapper"> 
+    <div id="login-container" class="login-box">
+      <div class="lb-header">
+        <a href="#" class="active" id="login-box-link">Login</a>
+        <a href="#" id="signup-box-link">Sign Up</a>
+      </div>
+      <div class="social-login">
+        <a href="#" id="facebook">
+          <i class="fa fa-facebook fa-lg"></i>
+           Login in with facebook 
+        </a>
+        <a href="#" id="google">
+          <i class="fa fa-google-plus fa-lg"></i>
+           Log in with Google 
+        </a>
+      </div>
 
-  <div id="login-container" class="login-box">
-    <div class="lb-header">
-      <a href="#" class="active" id="login-box-link">Login</a>
-      <a href="#" id="signup-box-link">Sign Up</a>
-    </div>
-    <div class="social-login">
-      <a href="#">
-        <i class="fa fa-facebook fa-lg"></i>
-        Login in with facebook
-      </a>
-      <a href="#">
-        <i class="fa fa-google-plus fa-lg"></i>
-        log in with Google
-      </a>
-    </div>
-    <form class="email-login">
-      <div class="u-form-group">
-        <input type="email" id="signInEmail" placeholder="Email"/>
-      </div>
-      <div class="u-form-group">
-        <input type="password" id="signInPassword" placeholder="Password"/>
-      </div>
-      <div class="u-form-group">
-        <button id="logInButton">Log in</button>
-      </div>
-      <div class="u-form-group">
-        <a href="#" class="forgot-password">Forgot password?</a>
-      </div>
-    </form>
-    <form class="email-signup">
-      <div class="u-form-group">
-        <input type="email" id="signUpEmail" placeholder="Email"/>
-      </div>
       <div class="u-form-group">
         <input type="password" id="signUpPassword" placeholder="Password"/>
       </div>
@@ -144,6 +127,7 @@
   <!-- ***** End Profile UPdate View **** -->
 
   
+
   <script data-main="javascripts/dating-site" src="lib/bower_components/requirejs/require.js"></script>
 
 </body>

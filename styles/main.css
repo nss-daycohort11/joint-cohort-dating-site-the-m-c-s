@@ -1,5 +1,24 @@
 body {
-  background-color: #1cbb9b; }
+  background: url(../images/fys-cutting-board.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.navbar-default {
+  background-color: Gray;
+  padding: 5px auto;
+  border: 2px gray solid; }
+
+.navbar-default .navbar-nav > li > a {
+  font-family: Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+  color: white;
+  /*Change text color here*/
+  font-size: 35px; }
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav {
+  color: #E0E0E0;
+  /*Text hover color on navbar*/ }
 
 .login-box {
   position: relative;
@@ -127,8 +146,7 @@ body {
   list-style-type: none; }
 
 .candidate {
-  border: 2px solid black;
-  margin: 15px;
+  margin: 20px auto;
   padding: 0; }
 
 .mini-profile-image {
