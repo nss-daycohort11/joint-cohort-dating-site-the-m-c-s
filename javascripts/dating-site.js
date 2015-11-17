@@ -23,6 +23,8 @@ require(
         var newEmail = $('#signUpEmail').val();
         var newPassword = $('#signUpPassword').val();
         auth.createNewUser(newEmail, newPassword);
+        $(".login-box").hide();
+        $(".home-view").show();
           console.log("tried to create user");
       });
 
@@ -31,20 +33,21 @@ require(
         var signInEmail = $('#signInEmail').val();
         var signInPassword = $('#signInPassword').val();
         console.log(signInPassword, signInEmail);
-
-            function authHandler(error, authData) {
+        $(".login-box").hide();
+        $(".home-view").show();
+          function authHandler(error, authData) {
             if (error) {
               console.log("Login Failed!", error);
             } else {
               console.log("Authenticated successfully with payload:", authData);
             }
-      }
+          }
 
       ref.authWithPassword({
         email    : signInEmail,
         password : signInPassword
       }, authHandler);
-    })  
+    });  
 
 
     /*
@@ -56,5 +59,4 @@ require(
       named `potential-mates.js`, and `add-favorite.js`.
      */
     
-  }
-);
+  });
