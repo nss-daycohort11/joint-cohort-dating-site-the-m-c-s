@@ -6,4 +6,5 @@ define(function(require) {
   var login = require("login");
   var homeView = require("home_view");
   var _ = require("lodash");
+  var profileView = require("profile_view");
 });
